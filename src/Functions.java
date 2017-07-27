@@ -37,7 +37,7 @@ public class Functions {
 
         for (int i = 0; i < heighRectangle; i++){
             for (int j = 0; j < widtheRectangle; j++){
-                System.out.print("*");
+                System.out.print("+");
             }
             System.out.println("");
         }
