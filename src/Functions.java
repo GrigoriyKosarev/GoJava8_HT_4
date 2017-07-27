@@ -26,7 +26,11 @@ public class Functions {
 
         System.out.println("---Задание 5-----------------------------");
         //готово
-        
+
+        System.out.println("---Задание 6-----------------------------");
+        //
+        //drawRectangleRecursia(3, 2);
+
     }
 
     public static void countToMAXNumber(int maxInt) {
@@ -42,6 +46,24 @@ public class Functions {
         System.out.println(maxInt);
 
         return;
+    }
+
+    public static void drawRectangleRecursia(int width, int heigh) {
+
+        if(width == 0){
+            System.out.println("");
+            return;
+        }
+
+        drawRectangleRecursia(width - 1, heigh);
+        System.out.print("+");
+
+        if (width == 0){
+
+        }
+
+        return;
+
     }
 
     public static void drawRectangle(String width, String heigh) {
