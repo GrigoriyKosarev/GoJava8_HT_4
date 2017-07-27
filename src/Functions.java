@@ -8,20 +8,30 @@ public class Functions {
     public static void main(String[] args) {
 
         //---Задание 1-----------------------------
-        System.out.println(countToMAXNumber(5, 1));
+        int x = 5;
+        countToMAXNumber(x);
+
+        /*---Задание 2-------------------------------------
+        Написать функцию drawRectangle которая рисует в консоли прямоугольник из символов '+'
+        Аргументы функции: ширина прямугольника в символах, высота прямоугольника в символах*/
+
 
     }
 
-    public static int countToMAXNumber(int maxInt, int i){
+    public static String countToMAXNumber(int maxInt){
 
-        if (maxInt == i){
-            return i;
+        // Базовый случай
+        if (maxInt == 1) {
+            System.out.println(maxInt);
+            return "1";
         }
-        else{
-            System.out.println(i);
-            countToMAXNumber(5, i+1);
-        }
+        // Шаг рекурсии / рекурсивное условие
+        countToMAXNumber(maxInt - 1);
 
-        return maxInt;
+        System.out.println(maxInt);
+
+        return "1";
     }
+
+
 }
