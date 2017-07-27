@@ -19,10 +19,16 @@ public class Functions {
         drawRectangle("3");
 
         System.out.println("---Задание 4-----------------------------");
+        /*Написать функцию getMax которая принимает на вход два аргумента в виде чисел. А возврыщает максимальное из этих двух.
+        Так же, необходимо перегрузить эту функцию для работы с разными числовыми типами переменных (int, float)*/
+        System.out.println("max = " + getMax(2, 3));
+        System.out.println("max = " + getMax(2.0F, 3.3F));
 
+        System.out.println("---Задание 5-----------------------------");
+        
     }
 
-    public static void countToMAXNumber(int maxInt){
+    public static void countToMAXNumber(int maxInt) {
 
         // Базовый случай
         if (maxInt == 1) {
@@ -37,13 +43,13 @@ public class Functions {
         return;
     }
 
-    public static void drawRectangle(String width, String heigh){
+    public static void drawRectangle(String width, String heigh) {
 
         int widtheRectangle = Integer.parseInt(width);
         int heighRectangle = Integer.parseInt(heigh);
 
-        for (int i = 0; i < heighRectangle; i++){
-            for (int j = 0; j < widtheRectangle; j++){
+        for (int i = 0; i < heighRectangle; i++) {
+            for (int j = 0; j < widtheRectangle; j++) {
                 System.out.print("+");
             }
             System.out.println("");
@@ -51,12 +57,12 @@ public class Functions {
 
     }
 
-    public static void drawRectangle(String width){
+    public static void drawRectangle(String width) {
 
         int widtheRectangle = Integer.parseInt(width);
 
-        for (int i = 0; i < widtheRectangle; i++){
-            for (int j = 0; j < widtheRectangle; j++){
+        for (int i = 0; i < widtheRectangle; i++) {
+            for (int j = 0; j < widtheRectangle; j++) {
                 System.out.print("+");
             }
             System.out.println("");
@@ -64,4 +70,23 @@ public class Functions {
 
     }
 
+    public static int getMax(int a, int b) {
+
+        if (a > b) {
+            return a;
+        } else if (b > a) {
+            return b;
+        }
+        return 0;
+    }
+
+    public static float getMax(float a, float b) {
+
+        if (a > b) {
+            return a;
+        } else if (b > a) {
+            return b;
+        }
+        return 0;
+    }
 }
