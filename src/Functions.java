@@ -25,6 +25,7 @@ public class Functions {
         System.out.println("max = " + getMax(2.0F, 3.3F));
 
         System.out.println("---Задание 5-----------------------------");
+        //готово
         
     }
 
