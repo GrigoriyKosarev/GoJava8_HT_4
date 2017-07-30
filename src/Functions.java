@@ -5,8 +5,8 @@ public class Functions {
     public static void main(String[] args) {
 
         System.out.println("---Задание 1-----------------------------");
-        int x = 5;
-        countToMAXNumber(x);
+        /*Написать функцию которая считает в консоли до числа Х. Аргументы функции: число Х*/
+        countToMAXNumber(5);
 
         System.out.println("---Задание 2-----------------------------");
         /*Написать функцию drawRectangle которая рисует в консоли прямоугольник из символов '+'
@@ -28,8 +28,9 @@ public class Functions {
         //готово
 
         System.out.println("---Задание 6-----------------------------");
-        //
-        //drawRectangleRecursia(3, 2);
+        /*РЕКУРСИЯ. Написать функцию drawRectangle которая рисует в консоли прямоугольник из символов '+'
+        Аргументы функции: ширина прямугольника в символах, высота прямоугольника в символах*/
+        drawRectangleRecursia(3, 2);
 
     }
 
@@ -50,21 +51,35 @@ public class Functions {
 
     public static void drawRectangleRecursia(int width, int heigh) {
 
-        if(width == 0){
+        if (drawRaw(width) == 1){
             System.out.println("");
+            heigh--;
+        }
+        if (heigh == 0){
             return;
         }
-
-        drawRectangleRecursia(width - 1, heigh);
-        System.out.print("+");
-
-        if (width == 0){
-
+        else{
+            drawRectangleRecursia(width, heigh);
         }
 
-        return;
+    }
+
+    public static int drawRaw(int width){
+
+        if (width == 0){
+            return 0;
+        }
+        else {
+            width--;
+        }
+        drawRaw(width);
+        System.out.print("+");
+
+        return 1;
 
     }
+
+
 
     public static void drawRectangle(String width, String heigh) {
 
