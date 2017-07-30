@@ -32,6 +32,62 @@ public class Functions {
         Аргументы функции: ширина прямугольника в символах, высота прямоугольника в символах*/
         drawRectangleRecursia(3, 2);
 
+        System.out.println("---Задание 7-----------------------------");
+        /*Написать программу, в которой выполнены все шесть предыдущих заданий. Каждое задание выполняется в отдельной
+        функции. В пределах этой же функции происходит ввод с консоли необходимых данных. Программа спрашивает
+        пользователя какую задачу он хочет решить (от 1 до 6). Затем программа вызывает соответствующую функцию
+        для решения этой задачи. По окончанию решения задачи, программа спрашивает пользователя, хочет ли он продолжить
+        решать задачи. Если да - опять спрашивает какую задачу.*/
+        allTasksInOne();
+
+    }
+
+    public static void allTasksInOne(){
+
+        int result;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Какую зачачу хотите решыть? (введите число):");
+        System.out.println("- Задание 1");
+        System.out.println("- Задание 2");
+        System.out.println("- Задание 3");
+        System.out.println("- Задание 4");
+        System.out.println("- Задание 5");
+        System.out.println("- Задание 6");
+
+        result = sc.nextInt();
+        if (result == 1){
+            countToMAXNumber(5);
+        }
+        else if (result == 2){
+            drawRectangle("3", "2");
+        }
+        else if (result == 3){
+            drawRectangle("3");
+        }
+        else if (result == 4){
+            System.out.println("max = " + getMax(2, 3));
+            System.out.println("max = " + getMax(2.0F, 3.3F));
+        }
+        else if (result == 5){
+            countToMAXNumber(5);
+        }
+        else if (result == 6) {
+            drawRectangleRecursia(3, 2);
+        }
+
+        System.out.println("");
+        System.out.println("Ещё хотите решыть зачачу (yes/no)?");
+        Scanner in = new Scanner(System.in);
+
+        String resultAnswear = in.nextLine();
+        boolean resultYes = new String(resultAnswear).equals("yes");
+        if(resultYes){
+            allTasksInOne();
+        }
+        else {
+            return;
+        }
     }
 
     public static void countToMAXNumber(int maxInt) {
