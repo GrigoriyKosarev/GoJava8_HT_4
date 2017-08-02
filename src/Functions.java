@@ -30,7 +30,7 @@ public class Functions {
         System.out.println("---Задание 6-----------------------------");
         /*РЕКУРСИЯ. Написать функцию drawRectangle которая рисует в консоли прямоугольник из символов '+'
         Аргументы функции: ширина прямугольника в символах, высота прямоугольника в символах*/
-        drawRectangleRecursia(3, 2);
+        drawRectangleRecursia(5, 3);
 
         System.out.println("---Задание 7-----------------------------");
         /*Написать программу, в которой выполнены все шесть предыдущих заданий. Каждое задание выполняется в отдельной
@@ -107,7 +107,7 @@ public class Functions {
 
     public static void drawRectangleRecursia(int width, int heigh) {
 
-        if (drawRaw(width) == 1){
+        /*if (drawRaw(width) == 1){
             System.out.println("");
             heigh--;
         }
@@ -116,8 +116,22 @@ public class Functions {
         }
         else{
             drawRectangleRecursia(width, heigh);
-        }
+        }*/
 
+        char[] str = new char[width];
+        for (int i = 0; i < width; i++)
+            str[i] = '+';
+
+        String plus = new String(str);
+
+        if (heigh == 0){
+            return;
+        }
+        else {
+            System.out.println(plus);
+            heigh--;
+            drawRectangleRecursia(width, heigh);
+        }
     }
 
     public static int drawRaw(int width){
