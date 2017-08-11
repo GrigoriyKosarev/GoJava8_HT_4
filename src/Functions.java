@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Functions {
 
+    public static int iRecursia = 0;
+
     public static void main(String[] args) {
 
         System.out.println("---Задание 1-----------------------------");
@@ -30,7 +32,8 @@ public class Functions {
         System.out.println("---Задание 6-----------------------------");
         /*РЕКУРСИЯ. Написать функцию drawRectangle которая рисует в консоли прямоугольник из символов '+'
         Аргументы функции: ширина прямугольника в символах, высота прямоугольника в символах*/
-        drawRectangleRecursia(5, 3);
+        drawRectangleRecursia(3, 3);
+        System.out.println("");
 
         System.out.println("---Задание 7-----------------------------");
         /*Написать программу, в которой выполнены все шесть предыдущих заданий. Каждое задание выполняется в отдельной
@@ -73,7 +76,7 @@ public class Functions {
             countToMAXNumber(5);
         }
         else if (result == 6) {
-            drawRectangleRecursia(3, 2);
+            drawRectangleRecursia(3, 3);
         }
 
         System.out.println("");
@@ -105,32 +108,21 @@ public class Functions {
         return;
     }
 
-    public static void drawRectangleRecursia(int width, int heigh) {
+    public static void drawRectangleRecursia(int x, int y) {
 
-        /*if (drawRaw(width) == 1){
-            System.out.println("");
-            heigh--;
-        }
-        if (heigh == 0){
-            return;
-        }
-        else{
-            drawRectangleRecursia(width, heigh);
-        }*/
+        //Перегрузить функцию drawRectangle (задание 2) таким образом, что бы она могла принимать на вход только
+        // 1 параметр (ширина квадрата) и рисовать квадрат с равными сторонами
 
-        char[] str = new char[width];
-        for (int i = 0; i < width; i++)
-            str[i] = '+';
-
-        String plus = new String(str);
-
-        if (heigh == 0){
-            return;
-        }
-        else {
-            System.out.println(plus);
-            heigh--;
-            drawRectangleRecursia(width, heigh);
+        if ((x == 0) && (y == 1)) return; //
+        if (x != 0){ // рухаємось по рядку поки не добігаєм його кінця
+            iRecursia++; // збільшуєм лічильник пройдених символів у рядку (в кінці зрівнюється з шириною рядка)
+            System.out.print("x ");
+            drawRectangleRecursia(x-1, y); // пересуваємось на 1 позицію в рядку
+        } else { // інакше (при досягненні кінця рядка) перескакуєм на наступний рядок
+            System.out.println(); // перескакуєм на наступний рядок
+            x = iRecursia; // зберігаєм ширину рядка для майбутнього проходження
+            iRecursia = 0; // обнуляємо лічильник пройдених символів у рядку
+            drawRectangleRecursia(x, y-1); // зменшуєм кількість рядків на 1
         }
     }
 
